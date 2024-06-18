@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/portfolio.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .hero {
+            background: url('{% static "portfolio/images/grady.jpg" %}') no-repeat center 37%/cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        .about, .projects, .contact {
+            background-color: #f4f4f4;
+        }
+        .projects .project-item {
+            display: inline-block;
+            margin: 20px;
+            width: 30%;
+            vertical-align: top;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav> 
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover my work and projects</p>
+        </div>
+    </section>
+    <section id="about" class="section about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Grady Bartlett, a recent graduate from the University of Dayton with a Bachelors Degree in Computer Information Systems.</p>
+    </section>
+    <section id="projects" class="section projects">
+        <h2>Projects</h2>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+    <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>Email: GradyBartlett01@gmail.com</p>
+        <p>Phone: (203)-858-6119</p>
+    </section>
+    <h1></h1>
+    <footer>
+        <p>&copy; 2024 Grady Bartlett. All rights reserved.</p>
+    </footer>
+</body>
+</html>
