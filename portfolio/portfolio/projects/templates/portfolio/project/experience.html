@@ -65,15 +65,16 @@
 <body>
     <header>
         <nav> 
-            <a href="">Home</a>
-            <a href="about">About</a>
-            <a href="experience">Projects</a>
+            <a href="../">Home</a>
+            <a href="../about">About</a>
+            <a href="">Projects</a>
         </nav>
     </header>
-    <section class="hero">
-        <div>
-            <h1>Welcome to My Portfolio</h1>
-            <p>Discover my work and projects</p>
+    <section id="projects" class="section projects">
+        <h2>Projects</h2>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
         </div>
     </section>
     <footer>

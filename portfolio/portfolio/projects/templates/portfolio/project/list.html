@@ -1,13 +1,13 @@
-{% extends "portfolio/base.html" %}
+{% extends "portfolio/projects/base.html" %}
 
-{% block title %}My Portfolio{% endblock %}
+<!--{% block title %}My Portfolio{% endblock %}-->
 
 {% block content %}
     
     {% for project in projects %}
         <h2>
             <a href="{% url 'projects:project_detail' project.id %}">{{ project.title }}</a>
-        </h2>
+        </h2> 
         <!--
         <p class="date">
             Published {{ project.publish }} by {{ project.author }}
@@ -15,3 +15,4 @@
         {{ project.body|truncatewords:30|linebreaks }}  
     {% endfor %}
 {% endblock %}
+    

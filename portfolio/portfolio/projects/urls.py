@@ -24,4 +24,6 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', views.project_list, name='project_list'),
     path('<int:id>/', views.project_detail, name='project_detail'),
+    path('experience/', views.experience, name='experience'),
+    path('about/',views.about, name='about'),
 ]
